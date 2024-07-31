@@ -1,0 +1,6 @@
+curl -X POST "http://localhost:8080/character/new?id=char1" -H "Content-Type: application/json" -d '{"level": 1, "name": "Hero", "weapon": "Sword", "secondary": "Shield", "armor": "Leather Armor"}'
+curl -X POST "http://localhost:8080/character/new?id=char2" -H "Content-Type: application/json" -d '{"level": 2, "name": "Warrior", "weapon": "Axe", "secondary": "Dagger", "armor": "Chainmail"}'
+curl -X PUT "http://localhost:8080/character/char1/armor" -H "Content-Type: text/plain" -d "Plate Armor"
+curl -X PUT "http://localhost:8080/character/char2/armor" -H "Content-Type: text/plain" -d "Dragon Scale Armor"
+curl -X GET "http://localhost:8080/character/char1/details"
+curl -X GET "http://localhost:8080/character/char2/details"

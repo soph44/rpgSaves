@@ -1,0 +1,48 @@
+@startuml
+
+class character
+class character extends cleric
+class character extends fighter
+class character extends ranger
+character -[hidden]-> fighter
+character -[hidden]-> cleric
+character -[hidden]-> ranger
+
+class character{
+    name
+    level
+    weapon
+    secondary
+    armor
+    levelUp()
+    updateWeapon()
+    updateSecondary()
+    updateArmor()
+    updateInventory()
+}
+
+class cleric{
+    clericSubClass
+    validateClericWeapon()
+    validateClericSeconary()
+    validateClericArmor()
+    spellCleric()
+}
+
+class fighter{
+    fighterSubClass
+    validateFighterWeapon()
+    validateFighterSeconary()
+    validateFighterArmor()
+    spellFighter()
+}
+
+class ranger{
+    rangerSubClass
+    validateRangerWeapon()
+    validateRangerSeconary()
+    validateRangerArmor()
+    spellRanger()
+}
+
+@enduml
