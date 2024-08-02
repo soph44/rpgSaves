@@ -1,19 +1,22 @@
 @startuml
 
-class character
-class character extends cleric
-class character extends fighter
-class character extends ranger
-character -[hidden]-> fighter
-character -[hidden]-> cleric
-character -[hidden]-> ranger
+class Character
+class SpellSlot
+class Spell
+class Character extends Player
+Character -[hidden]-> Player
 
-class character{
-    name
-    level
-    weapon
-    secondary
-    armor
+Player +-- SpellSlot
+Player +-- Spell
+
+class Character{
+    str name
+    int level
+    str weapon
+    str secondary
+    str armor
+    int health
+    int mana
     levelUp()
     updateWeapon()
     updateSecondary()
@@ -21,28 +24,21 @@ class character{
     updateInventory()
 }
 
-class cleric{
-    clericSubClass
-    validateClericWeapon()
-    validateClericSeconary()
-    validateClericArmor()
-    spellCleric()
+class Player{
+    enum JobType
+    jobChange()
+    defaultJobSpells()
 }
 
-class fighter{
-    fighterSubClass
-    validateFighterWeapon()
-    validateFighterSeconary()
-    validateFighterArmor()
-    spellFighter()
+class Spell{
+    str name
+    int damage
+    int cost
+    int effect  
 }
 
-class ranger{
-    rangerSubClass
-    validateRangerWeapon()
-    validateRangerSeconary()
-    validateRangerArmor()
-    spellRanger()
+class SpellSlot{
+    list spells
+    addSpell()
 }
-
 @enduml

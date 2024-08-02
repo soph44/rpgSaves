@@ -4,31 +4,35 @@ package com.sunshine;
  * Hello world!
  *
  */
-public class character {
+public class Character {
     // Properties
     private String name;
     private Integer level;
     private String weapon;
     private String secondary;
     private String armor;
+    private int health;
+    private int mana;
 
     // Constructor
-    public character(String name, Integer level, String weapon, String secondary, String armor) {
+    public Character(String name, Integer level, String weapon, String secondary, String armor, int health, int mana) {
         this.name = name;
         this.level = level;
         this.weapon = weapon;
         this.secondary = secondary;
         this.armor = armor;
-
+        this.health = health;
+        this.mana = mana;
     }
 
     // Default Constructor
-    public character() {}
+    public Character() {}
 
     // GETTERS
     public String getName() {
         return name;
     }
+
     public Integer getLevel() {
         return level;
     }
@@ -45,6 +49,13 @@ public class character {
         return armor;
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public int getMana() {
+        return mana;
+    }
 
     // SETTERS
     public void setLevel(Integer level) {
@@ -63,29 +74,38 @@ public class character {
         this.armor = armor;
     }
 
-    // METHODS
-    public void levelUp() {
-        setLevel(this.level + 1);
-        System.out.printf("HERO: %s has LEVELED-UP to LVL %d", this.name, this.level);
+    public void setHealth(int health) {
+        this.health = health;
     }
 
-    public void updateWeapon(String newWeapon) {
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    // METHODS
+    public String levelUp() {
+        setLevel(this.level + 1); 
+        return String.format("HERO: %s has LEVELED-UP to LVL %d%n", this.name, this.level);
+    }
+
+    public String updateWeapon(String newWeapon) {
         String oldWeapon = this.weapon;
         setWeapon(newWeapon);
-        System.out.printf("HERO: %s has dropped Weapon %s and picked-up %s", this.name, oldWeapon, this.weapon);
+        return String.format("HERO: %s has dropped Weapon %s and picked-up %s%n", this.name, oldWeapon, this.weapon);
     }
 
-    public void updateSecondary(String newSecondary) {
+    public String updateSecondary(String newSecondary) {
         String oldSecondary = this.secondary;
         setSecondary(newSecondary);
-        System.out.printf("HERO: %s has dropped Secondary %s and picked-up %s", this.name, oldSecondary, this.secondary);
+        return String.format("HERO: %s has dropped Secondary %s and picked-up %s%n", this.name, oldSecondary, this.secondary);
     }
 
-    public void updateArmor(String newArmor) {
+    public String updateArmor(String newArmor) {
         String oldArmor = this.armor;
         setArmor(newArmor);
-        System.out.printf("HERO: %s has dropped Armor %s and picked-up %s", this.name, oldArmor, this.armor);
+        return String.format("HERO: %s has dropped Armor %s and picked-up %s%n", this.name, oldArmor, this.armor);
     }
+}
 
     // // Main method for testing
     // public static void main(String[] args) {
@@ -111,4 +131,4 @@ public class character {
     //     System.out.println("Updated Secondary: " + character.getSecondary());
     //     System.out.println("Updated Armor: " + character.getArmor());
     // }
-}
+    //}
