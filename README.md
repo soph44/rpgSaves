@@ -2,9 +2,8 @@
 
 # About
 
-This application is WIP.
-The intent is to practice creating and testing a basic REST API using Java in a fun manner where users can save DnD characters and their properties.
+This application is WIP. The intent is to practice creating and testing a basic REST API using Java, Swagger, and Postman.
+This application will provide DnD players a management system for their characters and properties.
+Data will persist on a database such as PostgresSQL or will interface with AWS/GCP datawarehouse.
 
-Data persists on a database such as PostgresSQL or interface with AWS/GCP datawarehouse.
-
-![Class Diagram](./out/class_diagram/class_diagram.png)
+![Class Diagram](misc/class_diagram.png)
